@@ -5,6 +5,7 @@ import path, { dirname } from 'path';
 import url, { fileURLToPath } from "url";
 console.log(dirname(fileURLToPath(import.meta.url)))
 const __dirname=dirname(fileURLToPath(import.meta.url))
+const uri ="mongodb+srv://<user443>:<user443>@cluster0.tuxub0x.mongodb.net/todo";
 // const __dirname=path.dirname(new URL(import.meta.url).pathname)
 // const publicPath = path.join(__dirname+"\\static");
 // console.log(__dirname+"static") 
@@ -28,7 +29,7 @@ app.get('/privacy',(req,res)=>{
 });
 app.delete('/change',async(req,res)=>{
     if(req.cookies.username){
-    await mongoose.connect("mongodb://127.0.0.1:27017/todo").then(()=>{
+    await mongoose.connect(uri).then(()=>{
         console.log("deletion a new todo");
     }).catch(()=>{
         console.log("deletion to-do connection failed");
@@ -60,7 +61,7 @@ app.delete('/change',async(req,res)=>{
 })
 app.put('/change',async(req,res)=>{
     if(req.cookies.username){
-        await mongoose.connect("mongodb://127.0.0.1:27017/todo").then(()=>{
+        await mongoose.connect(uri).then(()=>{
             console.log("updating a new todo");
         }).catch(()=>{
             console.log("updating to-do connection failed");
@@ -98,7 +99,7 @@ app.put('/change',async(req,res)=>{
     }
 })
 app.post("/newtodo",login1,async(req,res)=>{
-    await mongoose.connect("mongodb://127.0.0.1:27017/todo").then(()=>{
+    await mongoose.connect(uri).then(()=>{
         console.log("added a new todo");
     }).catch(()=>{
         console.log("new to-do connection failed");
@@ -132,7 +133,7 @@ app.post("/newtodo",login1,async(req,res)=>{
 })
 app.get('/mydiary/:username',login,async(req,res)=>{
     var data;
-    await mongoose.connect("mongodb://127.0.0.1:27017/todo").then(()=>{
+    await mongoose.connect(uri).then(()=>{
         console.log("connection was succesfull for my diary ");
     }).catch(()=>{
         console.log("connection was not successfull for my diary ");
@@ -165,7 +166,7 @@ app.get("/login",(req,res)=>{
 })
 app.post("/login",async(req,res)=>{
     var data;
-    await mongoose.connect("mongodb://127.0.0.1:27017/todo").then(()=>{
+    await mongoose.connect(uri).then(()=>{
         console.log("connection was succesfull for login ");
     }).catch(()=>{
         console.log("connection was not successfull for login ");
@@ -209,7 +210,7 @@ app.post("/login",async(req,res)=>{
 })
 app.post("/createaccount",async(req,res)=>{
     if(req.body.password===req.body.password1&&req.body.username!="user"&&req.body.username!="users"){
-    await mongoose.connect("mongodb://127.0.0.1:27017/todo").then(()=>{
+    await mongoose.connect(uri).then(()=>{
         console.log("connection was succesfull for account creation");
     }).catch(()=>{
         console.log("connection was not successfull for account creation");
@@ -274,7 +275,7 @@ app.listen(3000,()=>{
             console.log("mai async wala")
             res.redirect("/mydiary/"+req.cookies.username);
         }else{
-        await mongoose.connect("mongodb://127.0.0.1:27017/todo").then(()=>{
+        await mongoose.connect(uri).then(()=>{
             console.log("connection is successfull");
         }).catch(()=>{
             console.log("error connecting to database")
@@ -319,7 +320,7 @@ app.listen(3000,()=>{
  async function login1(req,res,next){
     var data;
     if(req.cookies.username){
-        await mongoose.connect("mongodb://127.0.0.1:27017/todo").then(()=>{
+        await mongoose.connect(uri).then(()=>{
             console.log("connection is successfull");
         }).catch(()=>{
             console.log("error connecting to database")
