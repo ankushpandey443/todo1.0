@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/<%= locals.css %>.css">
+    <% if(locals.js){ %>
+    <script src="/js/<%= locals.js %>.js" defer></script>
+    <% } %>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h2><a href="/">To-Do Diary</a></h2>
+        <img src="\src\images\icons8-menu-96.png"  alt="">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/mydiary/1">My Diary</a></li>
+            <li><a href="/about">About</a></li>
+            <li><img src="\src\images\icons8-dark-mode-100.png" alt="" srcset="" style="width: 30px;"></li>
+        </ul>
+    </header>

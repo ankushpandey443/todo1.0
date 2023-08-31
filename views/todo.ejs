@@ -1,0 +1,28 @@
+<%- include('header.ejs') %>
+<section class="container">
+    <h2>TO-DO list</h2>
+    <div class="list">
+        <% for(var i =0;i<data.length;i++){ %>
+            <% if(data[i].done===true) {%>
+        <div class="item blur">
+            <img src="\src\images\icons8-delete-100.png" alt=""  title="Delete task">
+            <p><%= data[i].task %></p>
+            <img src="\src\images\icons8-tick-100.png" alt=""  title="Mark as undone">
+            <% }else{ %>
+                <div class="item">
+                    <img src="\src\images\icons8-delete-100.png" alt=""  title="Delete task">
+            <p><%= data[i].task %></p>
+            <img src="\src\images\icons8-tick-100.png" alt=""  title="Mark as done">
+                    <% } %>
+            
+        </div>
+        <% } %>
+        <div class="newitem">
+            <form action="/newtodo" method="post">
+                <input type="text" name="todo">
+                <button type="submit"><img src="\src\images\icons8-add-64.png" alt="" width="40px"></button>
+            </form>
+        </div>
+    </div>
+</section>
+<%- include('footer.ejs') %>

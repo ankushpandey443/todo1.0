@@ -1,0 +1,387 @@
+@font-face {
+    font-family: myfont1;
+    src: url("..\\src\\fonts\\TiltPrism-Regular-VariableFont_XROT\,YROT.ttf");
+}
+@font-face {
+    font-family: myfont2;
+    src: url("..\\src\\fonts\\IndieFlower-Regular.ttf");
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: calc(14px+0.39vw);
+    --primary:#83ebb5;
+    --second:#fff;
+    --tert:#454444;
+    /* --primary: #9ad5caff;
+--second: #acdde7ff;
+--tert: #adb9e3ff;
+--quad: #a379c9ff; */
+}
+hr{
+    max-width: 200px;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 50px;
+    background-color:var(--second);
+}
+.window{
+    width: clamp(300px,50%,800px);
+    border: 1px solid;
+    display: flex;
+    background-image: linear-gradient(80deg ,var(--primary) 50%,var(--second) 50%);
+}
+.window>div{
+    width: 100%;
+}
+#info2{
+    display: none;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    row-gap: 10px;
+}
+.info img{
+    width: 100%;
+}
+.info h2{
+    font-family: myfont1;
+    font-size: 2rem;
+}
+.info p{
+    font-family: myfont2;
+}
+.login{
+    display: flex;
+    direction: row;
+    overflow: hidden;
+    width: 100%;
+}
+.in{
+/* nothing here */
+}
+.up{
+    /* nothing here */
+}
+.sign{
+    position: relative;
+    min-width: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding: 40px 10px;
+    row-gap: 10px;
+}
+.sign form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.sign h2{
+    font-family: myfont1;
+    font-size:2rem;
+}
+.sign p{
+    font-style: italic;
+    color: var(--tert);
+    font-family: myfont2;
+}
+.sign .welcome span{
+    font-family: myfont2;
+}
+.sign .below span{
+    font-family: myfont2;
+    text-decoration: underline;
+    color: #3a3d3c;
+    cursor: pointer;
+}
+.sign .below span:hover{
+    color: #83ebb5;
+}
+.sign hr{
+    margin-top: 10px;
+    width: 80%;
+}
+.sign .or{
+    margin-top: -24px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    background-color: transparent;
+}
+.sign label{
+    font-family: myfont2;
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-top: 30px;
+}
+.sign input{
+    border: none;
+    border-bottom: 1px solid;
+    font-size: 1rem;
+    font-weight: 100;
+    color: #454444;
+    background-color: transparent;
+
+}
+.sign input:focus-visible,.sign input:active{
+    outline: none;
+}
+.sign a{
+    text-decoration: none;
+    color: #454444;
+    align-self: flex-end;
+}
+.sign a:hover{
+color: #222222;
+text-shadow: 0px 1px #f1f0f0;
+}
+.sign button{
+    margin-top: 30px;
+    cursor: pointer;
+    width: fit-content;
+    align-self: center;
+    border-radius: 20px;
+    border: none;
+    background-color: #454444;
+    color: #fff;
+    padding: 10px 30px;
+}
+button[disabled="true"]{
+    cursor: not-allowed;
+}
+.sign button:hover{
+    box-shadow: 2px 2px 2px #7a7575;
+}
+@media (max-width:1100px) {
+    .window{
+        width: clamp(400px,60%,800px);
+    }
+    
+}
+@media (max-width:800px) {
+    .window{
+        width: clamp(400px,80%,800px);
+    }
+    
+}
+@media (max-width:600px) {
+    .window{
+        width: clamp(400px,90%,800px);
+    }
+    
+}
+@media (max-width:395px) {
+    .window{
+        width: 100%;
+        flex-direction: column;
+        background-image: none;
+    }
+    section{
+        height: auto;
+        padding: 0;
+    }
+    .info{
+        background-color: #83ebb5;
+    }
+    
+}
+.coming{
+    animation-name:coming;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.going{
+    animation-name:going;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+@keyframes coming {
+    0%{left: -0%;}
+    100%{left: -100%;}
+}
+@keyframes going {
+    0%{left:-100%;}
+    100%{left: -0%;}
+}
+
+
+
+
+
+
+
+/* this is css for header and footer */
+
+
+
+
+
+
+
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #222;
+    background-color: #fff;
+}
+header >img{
+    display:none ;
+    width: 30px;
+}
+header h2 a{
+    font-size: 2rem;
+    font-family: myfont1;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+header ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.showlist{
+    width: 200px;
+}
+header ul li{
+    list-style: none;
+    padding: 10px;
+}
+header ul li a{
+    text-decoration: none;
+    font-family: cursive;
+    font-size: 1.4rem;
+    color: black;
+    padding: 10px;
+}
+
+
+footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+footer .nav{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: 1px solid #222;
+}
+footer .nav .logo h2 a{
+    font-size: 2rem;
+    font-family: myfont1;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+footer .nav .social h3{
+    font-size: 1.2rem;
+}
+footer .nav .social ul li{
+    list-style: none;
+}
+footer .nav .social ul li img{
+    display: none;
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    margin: 0 10px;
+}
+footer .nav .social ul li a{
+    text-decoration:underline;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    color: black;
+    padding-top: 10px;
+}
+footer .nav .navigation h3{
+    font-size: 1.2rem;
+}
+footer .nav .navigation ul li{
+    list-style: none;
+}
+footer .nav .navigation ul li a{
+    text-decoration: underline;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    color: black;
+    padding-top: 10px;
+}
+footer .copyright{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    border-top: 1px solid #222;
+}
+@media (max-width:700px) {
+    header >img{
+        display: inline-block;
+    }
+    header ul{
+        position: absolute;
+        right: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        top: 0;
+        width: 0px;
+        overflow: hidden;
+        height: calc(100vh - 40px) ;
+        background-color: #7a7575;
+        border:1px solid #222 ;
+        align-items: flex-end;
+        margin: 40px 0 0 0;
+        transition: width 200ms ease-in;
+        z-index: 1;
+
+    }
+}
+@media (max-width:500px) {
+    footer .nav{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    footer .nav .social ul li a span{
+        display: none;
+    }
+    footer .nav .social h3{
+        display: none;
+    }
+    footer .nav .social ul li a img{
+        display: inline-block;
+    }
+    footer .nav .social ul{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+    footer .nav .navigation{
+        display: none;
+    }
+    footer .copyright{
+        flex-direction: column;
+        row-gap:10px ;
+    }
+    
+}

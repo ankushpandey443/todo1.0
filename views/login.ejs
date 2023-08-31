@@ -1,0 +1,49 @@
+<%- include('header.ejs') %>
+<section>
+    <div class="window">
+        <div class="info">
+            <img src="./src/images/bird.png" alt="A bird" srcset="">
+            <h2>To-Do Diary</h2>
+            <p>"The only way to do great work is to love what you do." - Steve Jobs </p>
+        </div>
+        <div class="login">
+            <div class="sign in">
+                <h2>To-Do Diary</h2>
+                <p class="welcome">Welcome <span>Back</span> </p>
+                <form action="/login" method="post" id="form1">
+                    <label for="username">
+                        Username
+                    </label>
+                    <input type="text" id="username"name="username" required >
+                    <label for="password" >Password</label>
+                    <input type="password" id="password"name="password" required>
+                    <a href="#">Forget password?</a>
+                    <button type="submit" formtarget="form1">Sign-In</button>
+                </form>
+                <hr>
+                <p class="or">or</p>
+                <p class="below">New To-Do Diary? <span>Create Account</span></p>
+            </div>
+            <div class="sign up">
+                <h2>To-Do Diary</h2>
+                <p class="welcome">Welcome to <span>To-Do Diary</span> </p>
+                <form action="/createaccount" method="post">
+                    <label for="newusername">
+                        Username
+                    </label>
+                    <input type="text" id="newusername" name="username" required />
+                    <label for="newpassword" >Password</label>
+                    <input type="password" id="newpassword" name="password"required />
+                    <label for="newpassword2" >Re-Type Password</label>
+                    <input type="password" id="newpassword2" name="password1" required />
+                    <p style="color:#ff0000;opacity: 0;">passwords don't match</p>
+                    <button type="submit">Sign-Up</button>
+                </form>
+                <hr>
+                <p class="or">or</p>
+                <p class="below">Already a user? <span>Sign-In</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+<%- include('footer.ejs') %>
