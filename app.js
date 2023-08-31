@@ -5,7 +5,7 @@ import path, { dirname } from 'path';
 import url, { fileURLToPath } from "url";
 console.log(dirname(fileURLToPath(import.meta.url)))
 const __dirname=dirname(fileURLToPath(import.meta.url))
-const uri ="mongodb+srv://<user443>:<user443>@cluster0.tuxub0x.mongodb.net/todo";
+const uri ="mongodb+srv://user443:user443@cluster0.tuxub0x.mongodb.net/todo";
 // const __dirname=path.dirname(new URL(import.meta.url).pathname)
 // const publicPath = path.join(__dirname+"\\static");
 // console.log(__dirname+"static") 
