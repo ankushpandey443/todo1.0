@@ -192,17 +192,16 @@ app.post("/login",async(req,res)=>{
         data = await user.findOne({username:req.body.username});
         console.log(data);
        }catch{
-        console.log("hnji yhi error hai");
+        console.log("error in data retrieval from mongodb");
        }
     }
     finally{
         mongoose.connection.close();
     }
     console.log(req.body.username,data.username,req.body.password,data.password);
-    if(req.body.username===data.username&&req.body.password===data.password){
+    if(req.body.username===data?.username&&req.body.password===data.password){
         res.cookie("username",req.body.username,{maxAge:100000});
         res.cookie("password",req.body.password,{maxAge:100000});
-        console.log("mai chala bhai");
         res.redirect("/mydiary/"+data.username);
     }else{
         res.redirect("/login");
@@ -378,22 +377,3 @@ app.listen(3000,()=>{
 
 
 
-
-
-
-
-// future use
-
-// const myModel = mongoose.model('MyModel', mySchema);
-// const myDoc = new myModel();
-// myDoc.myArray.push('data');
-// myDoc.save();
-
-// const mySchema = new mongoose.Schema({
-//     myArray: [String]
-//   });
-  
-
-// const doc = await Model.findById(id);
-// doc.friends.push({firstName: 'John', lastName: 'Doe'});
-// await doc.save();
