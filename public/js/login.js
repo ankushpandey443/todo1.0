@@ -1,3 +1,8 @@
+var burger = document.querySelector("header>img");
+burger.addEventListener("click",(e)=>{
+    document.querySelector("header ul").classList.toggle("showlist");
+})
+
 var signup = document.querySelector(".in .below span");
 var signin = document.querySelector(".up .below span");
 var signinpage = document.querySelector(".in");
@@ -33,7 +38,3 @@ function verify(){
 
 
 
-var burger = document.querySelector("header>img");
-burger.addEventListener("click",(e)=>{
-    document.querySelector("header ul").classList.toggle("showlist");
-})
