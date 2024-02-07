@@ -1,4 +1,11 @@
 // js for the header and footer 
+var burger = document.querySelector("header>img");
+burger.addEventListener("click",(e)=>{
+    document.querySelector("header ul").classList.toggle("showlist");
+})
+
+
+
 var list = document.querySelector(".list");
 var objpost;
 list.addEventListener("click",async(e)=>{
@@ -86,7 +93,3 @@ function xmlhandler(obj,e){
     return promise;
 }
 
-var burger = document.querySelector("header>img");
-burger.addEventListener("click",(e)=>{
-    document.querySelector("header ul").classList.toggle("showlist");
-})
